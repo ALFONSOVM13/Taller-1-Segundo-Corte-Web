@@ -48,6 +48,14 @@ function agregarUsuario() {
       alert("Por favor llene todos los campos.");
       return;
     }
+    function validarEmail(email) {
+      let re = /\S+@\S+\.\S+/;
+      return re.test(email);
+    }
+    if (!validarEmail(email)) {
+      alert("Por favor ingrese un email válido.");
+      return;
+    }
   
 
   // Verificar si la cédula ya existe en el array de usuarios
@@ -186,21 +194,3 @@ function mostrarUsuarios() {
     tabla.appendChild(fila);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
